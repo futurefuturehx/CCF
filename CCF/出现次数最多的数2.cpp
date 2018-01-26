@@ -40,7 +40,7 @@ void chuli(){
     }
   }
   int min=d[0];
-  for(int i;i<n;i++){
+  for(int i=0;i<n;i++){
     if((d[i]<min)&&d[i]!=0){
       min=d[i];
     }

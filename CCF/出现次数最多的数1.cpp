@@ -7,7 +7,7 @@ int main(){
   struct{
     int num;
     int count;
-  }std[10001];
+  }std[10000];
   cin>>n;
   for(int p=0;p<n;p++){
   	std[p].count=0;
@@ -18,11 +18,11 @@ int main(){
   }
   for(int j=0;j<n;j++){
     for(int k=j+1;k<n;k++){
-      if(std[j].num==1001){
-        break;
+      if(std[k].num==10001){
+        continue;
       }
       if(std[j].num==std[k].num){
-        std[k].num=1001;
+        std[k].num=10001;
         std[j].count++;
       }
     }
@@ -30,7 +30,11 @@ int main(){
   for(int m=0;m<n;m++){
     if(std[m].count>std[maxloc].count){
       maxloc=m;
-    }
+    }else if(std[m].count==std[maxloc].count){
+			if(std[m].num<std[maxloc].num){
+				maxloc=m;
+			}
+		}
   }
   cout<<std[maxloc].num;
 }
@@ -44,3 +48,7 @@ int main(){
 //std[i].count哪个位置的哪个部分
 //注意break跳出的位置 是内层循环 不是外层循环
 //有时候适合使用压缩式实验机
+
+//break是跳出整个循环不再循环 continue是跳出本次循环
+
+//看清题目 是输出最小的不是最前面的
