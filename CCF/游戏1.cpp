@@ -51,5 +51,5 @@ for (iter = vec.begin(); iter != vec.end(); )
   iter类似于指针 需要写* 还需要iter++偏移
   用iter之后更针对vector本身 而不是控制
 //直到机while()
-//临点突变 传递心意 的快递员flag变量
+//临界突变 传递心意 的快递员flag变量
 //顺读机器思维 上一个list.at(i)不是现在的list.at(i)
