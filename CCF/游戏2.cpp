@@ -2,7 +2,7 @@
 #include<queue>
 using namespace std;
 int main(){
-  queue<int> que;
+  queue<int> que;//类似于容器 只要把vector换成queue就行了
   int n,k;
   int fron;
   int num=1;
@@ -16,7 +16,8 @@ int main(){
     if(num%k!=0&&(num%10)!=k)
        que.push(fron);
     num++;
-  }
+  }//备份第一个元素再弹出 满足条件再压入
+  //三角形力场
   cout<<que.front();
   return 0;
 }

@@ -38,27 +38,27 @@ int main()
     for(int i=1;i<=keyn;++i)
         key[i]=i;
     for(int i=0;i<tean;++i)
-    {
-        teacher x;//实例化一个对象可以看作数据库里面的一列竖着的记录
+    {//注意你刚才的思维误区 不是两段记录而是两张表
+        teacher x;//表示有这些字段的记录 teacher表示有这些字段 x是一条待定记录
         cin>>x.num>>x.s>>x.e;//这三个变量分别表示，钥匙的编号，开始上课的时间，补课的时长，
-        x.e+=x.s;+
-        p.push_back(x);
-        q.push_back(x);
+        x.e+=x.s;//补课时长最后变成了课堂结束时间 结束时间也就是放钥匙的时间 开始时间是拿钥匙的时间
+        p.push_back(x);//p表
+        q.push_back(x);//q表
     }
     sort(p.begin(),p.end(),cmpp);
     sort(q.begin(),q.end(),cmpq);
     int i=0,j=0;//对于while的循环i j初始化可以写在外面
     while(i<tean&&j<tean)//while可以结合逻辑运算和是非运算
-    {//语义 任意两两比较
-        if(p[i].s<q[j].e)
+    {//语义 任意两两比
+        if(p[i].s<q[j].e)//p在拿 谁先先考虑谁
         {
             int pos=searchkeypos(p[i++].num);//这是一个拿操作
             key[pos]=-1;//相当于pv操作 -1标识该位置空了 就标上-1 pv标识
         }//每部分按每部分的规则
-        else if(p[i].s>=q[j].e)
+        else if(p[i].s>=q[j].e)//q在放 谁先先考虑谁
         {
             int pos=searchkeypos(-1);//虚与实 表与里 表面标识 内部位置
-            key[pos]=q[j++].num;//这是一个放操作
+            key[pos]=q[j++].num;//这是一个放操作 找到第一个空位置 放上去
         }//你看 结构体可以异位比较 甚至可以对角线比较
     }
     while(j<tean)
@@ -70,3 +70,5 @@ int main()
         cout<<key[i]<<" ";
     return 0;
 }
+//题目中的“若果有多位老师换钥匙...”已经被排序解决了
+//排序可以预先解决许多特殊情况
