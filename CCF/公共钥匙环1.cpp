@@ -65,7 +65,9 @@ int main()
     {
         int pos=searchkeypos(-1);
         key[pos]=q[j++].num;
-    }//不断找到空位置 放上去
+    }
+    //最后快下班的时候只有还没有人借
+    //不断找到空位置 放上去
     for(int i=1;i<=keyn;++i)
         cout<<key[i]<<" ";
     return 0;
