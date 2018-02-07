@@ -1,32 +1,40 @@
-//算法本质 步骤思维
-//1.先将1-n录入
-//2.将操作次数录入 录入所有操作
-//3.找到对应值编号的位置 弹出
-    //用temp先进行备份
-//4.找到符合要求的位置插入
-//5.输出最后的编号顺序
-#include<bits/c++.h>
+#include<bits/stdc++.h>
 using namespace std;
-struct{
-  int p;
-  int q;
-}std[1001];
 int main(){
-  int n;
-  cin>>n;
-  vector<int> list;
-  for(int i=0;i<n;i++){
-    list.at(i)=i+1;
+  int bhgs;
+  cin>>bhgs;
+  int list[1001];
+  struct{
+    int p;
+    int q;
+  }caozuo[1001];
+  for(int i=0;i<bhgs;i++){
+    list[i]=i+1;
   }
-  int cishu;
-  int p;
-  int q;
-  int temp;
-  cin>>cishu;
-  while(cishu){
-    cin>>p>>q;
+  int czcs;
+  cin>>czcs;
+  for(int j=0;j<czcs;j++){
+    cin>>caozuo[j].p>>caozuo[j].q;
   }
-  for(int i=0;i<;i++){
-      temp=list.at(i);    
+  for(int i=0;i<czcs;i++){
+    for(int j=0;j<bhgs;j++){
+      if(caozuo[i].p==list[j]&&caozuo[i].q<0){
+        for(int k=j+caozuo[i].q+1;k<j+1;k++){
+          list[k]=list[k-1];
+        }
+        list[j+caozuo[i].q]=caozuo[i].p;
+      }
+      if(caozuo[i].p==list[j]&&caozuo[i].q>0){
+        for(int k=j+caozuo[i].q;k>j-1;k--){
+          list[k]=list[k+1];
+        }
+        list[j+caozuo[i].q]=caozuo[i].p;
+      }
+    }
+  }
+  for(int i=0;i<bhgs;i++){
+    cout<<list[i]<<" ";
   }
 }
+//没有用冒泡排序的变形 复杂了
+//将p q保存下来再操作 而不是先过滤再操作 没有必要
