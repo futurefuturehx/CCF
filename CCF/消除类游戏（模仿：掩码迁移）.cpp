@@ -1,5 +1,4 @@
-//掩码模板 可以暂存多次操作为一次性操作而且使得互不干扰 
-//完全正确 运用了掩码的精髓
+//类似于子网掩码般的操作 可以暂存多次操作为一次性操作而且使得互不干扰 
 #include<iostream>
 using namespace std;
 int main(){
@@ -30,7 +29,7 @@ int main(){
         for(int j=0;j<n;j++){
             if(yanma[i][j]==1){
                 cout<<0<<" ";
-            }
+            }//如果作为掩码的对应位置上为1说明这个位置的数被消除了 变为0
             else{
                 cout<<gezi[i][j]<<" ";
             }
