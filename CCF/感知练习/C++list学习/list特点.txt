@@ -1,0 +1,44 @@
+list特点：
+1.不使用连续的内存空间 这样可以随意地进行动态操作
+2.可以在内部任何位置快速地插入或删除 当然也可以在两端进行push和pop
+
+3.不能进行内部的随机访问，即不支持[]操作符和vector.at()
+4.相对于vector 占用更多的内存
+
+初学list需要掌握的知识：
+1.定义一个list
+2.向list中加入元素
+3.如何知道list是否为空
+4.如何使用for循环来遍历一个list
+5.如何使用STL的通用算法for_each来遍历list
+6.list成员函数begin()和end()以及它们的意义
+7.iterator范围的概念和一个范围的最后一个位置实际上并不被处理这一事实
+
+成员函数列表：
+assign()给List赋值
+back()返回最后一个元素
+begin()返回指向第一个元素的迭代器
+clear()删除所有元素
+empty()如果list是空的则返回true
+end()返回我为的迭代器
+erase()删除一个元素
+front()返回指向第一个元素
+get_allocator()返回list的配置
+insert()插入一个元素到list中
+max_size()返回list能容纳的最大元素数量
+merge()合并两个list
+pop_back()删除最后一个元素
+pop_front()删除第一个元素
+push_back()在list的末尾添加一个元素
+push_front()在list的头部添加一个元素
+rbegin()返回指向第一个元素的逆向迭代器
+remove()从list删除元素
+remove_if()按指定条件删除元素
+rend()指向list末尾的逆向迭代器
+resize()改变list的大小
+reverse()把list的元素倒转
+size()返回list中的元素个数
+sort()给list排序
+splice()合并两个list
+swap()交换两个list
+unique()删除list中重复的元素

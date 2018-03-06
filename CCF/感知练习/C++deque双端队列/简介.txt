@@ -1,0 +1,12 @@
+k.empty()查看是否为空范例 是的话返回1，不是返回0
+k.clear()清楚队列里的所有数据
+
+k.push_front(i)从已有元素前面增加元素i
+k.push_back(i)从已有元素后面增加元素i
+k.pop_front()清除第一个元素
+k.pop_back()清除最后一个元素
+
+k.front()显示第一个元素
+k.back()显示最后一个元素
+
+k.size()输出现有元素的个数
